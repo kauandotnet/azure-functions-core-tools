@@ -292,7 +292,6 @@ namespace Build
                 var unSignedPackages = GetUnsignedBinaries(targetDir);
                 if (unSignedPackages.Count() != 0)
                 {
-
                     var missingSignature = string.Join($",{Environment.NewLine}", unSignedPackages);
                     ColoredConsole.Error.WriteLine($"This files are missing valid signatures: {Environment.NewLine}{missingSignature}");
                     throw new Exception($"sigcheck.exe test failed. Following files are unsigned: {Environment.NewLine}{missingSignature}");
